@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/navigation"
+    app:startDestination="@id/splash_screen">
+
+<!--    actions    -->
+
+    <action android:id="@+id/goToHome"
+        app:destination="@id/home_screen"
+        app:popEnterAnim="@anim/slide_in_left"
+        app:popExitAnim="@anim/slide_out_right"
+        app:enterAnim="@anim/slide_in_right"
+        app:exitAnim="@anim/slide_out_left"/>
+
+    <action android:id="@+id/goToLogin"
+        app:destination="@id/login_screen"
+        app:popEnterAnim="@anim/slide_in_left"
+        app:popExitAnim="@anim/slide_out_right"
+        app:enterAnim="@anim/slide_in_right"
+        app:exitAnim="@anim/slide_out_left"/>
+
+    <action android:id="@+id/goToRegister"
+        app:destination="@id/register_screen"
+        app:popEnterAnim="@anim/slide_in_left"
+        app:popExitAnim="@anim/slide_out_right"
+        app:enterAnim="@anim/slide_in_right"
+        app:exitAnim="@anim/slide_out_left"/>
+
+    <action android:id="@+id/goToWorkoutDetail"
+        app:destination="@id/workout_detail_screen"
+        app:popEnterAnim="@anim/slide_in_left"
+        app:popExitAnim="@anim/slide_out_right"
+        app:enterAnim="@anim/slide_in_right"
+        app:exitAnim="@anim/slide_out_left"/>
+
+    <action android:id="@+id/goToAddNewWorkout"
+        app:destination="@id/add_new_workout_screen"
+        app:popEnterAnim="@anim/slide_in_left"
+        app:popExitAnim="@anim/slide_out_right"
+        app:enterAnim="@anim/slide_in_right"
+        app:exitAnim="@anim/slide_out_left"/>
+
+<!--    fragments  -->
+    <fragment android:id="@+id/home_screen"
+        android:name="dalian.razvan.cucer.workouts.screens.workoutHistory.WorkoutHistoryFragment"
+        android:label="home_screen"/>
+
+    <fragment android:id="@+id/splash_screen"
+        android:name="dalian.razvan.cucer.workouts.screens.splash.SplashFragment"
+        android:label="splash_screen"/>
+
+    <fragment android:id="@+id/login_screen"
+        android:name="dalian.razvan.cucer.workouts.screens.login.LoginFragment"
+        android:label="login_screen"/>
+
+    <fragment android:id="@+id/register_screen"
+        android:name="dalian.razvan.cucer.workouts.screens.register.RegisterFragment"
+        android:label="register_screen"/>
+
+    <fragment android:id="@+id/workout_detail_screen"
+        android:name="dalian.razvan.cucer.workouts.screens.workoutDetail.WorkoutDetailFragment"
+        android:label="workout_detail_screen"/>
+
+    <fragment android:id="@+id/add_new_workout_screen"
+        android:name="dalian.razvan.cucer.workouts.screens.addNewWorkout.AddNewWorkoutFragment"
+        android:label="add_new_workout_screen"/>
+
+</navigation>

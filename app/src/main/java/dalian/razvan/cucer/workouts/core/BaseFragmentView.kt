@@ -4,7 +4,7 @@ interface BaseFragmentView {
 
     fun showProgressBar(show : Boolean)
 
-    fun showPopup(drawableResID: Int, text : String)
+    fun showPopup(text : String)
 
     fun goBack()
 
