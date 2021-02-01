@@ -1,4 +1,4 @@
-package dalian.razvan.cucer.core.baseClasses
+package dalian.razvan.cucer.workouts.core
 
 interface BaseFragmentView {
 

@@ -1,4 +1,4 @@
-package dalian.razvan.cucer.workouts
+package dalian.razvan.cucer.workouts.core
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,7 +8,7 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
 import com.google.android.material.bottomsheet.BottomSheetBehavior
-import dalian.razvan.cucer.core.baseClasses.BaseFragmentView
+import dalian.razvan.cucer.workouts.R
 
 abstract class BaseFragment: Fragment(), BaseFragmentView, DrawerLayout.DrawerListener {
 
