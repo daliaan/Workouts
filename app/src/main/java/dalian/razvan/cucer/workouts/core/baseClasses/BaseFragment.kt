@@ -12,8 +12,6 @@ import kotlinx.android.synthetic.main.fragment_base.*
 
 abstract class BaseFragment: Fragment(), BaseFragmentView {
 
-    protected lateinit var viewModel: BaseViewModel
-
     abstract fun whichLayout(): Int
     abstract fun getTitle(): Int
     abstract fun showHomeAsUp(): Boolean

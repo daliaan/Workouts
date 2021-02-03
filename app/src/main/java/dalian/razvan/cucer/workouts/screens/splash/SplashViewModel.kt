@@ -1,4 +1,6 @@
 package dalian.razvan.cucer.workouts.screens.splash
 
-class SplashViewModel {
+import dalian.razvan.cucer.workouts.core.baseClasses.BaseViewModel
+
+class SplashViewModel: BaseViewModel() {
 }
