@@ -2,7 +2,7 @@ package dalian.razvan.cucer.workouts.screens
 
 import android.os.Bundle
 import dalian.razvan.cucer.workouts.R
-import dalian.razvan.cucer.workouts.core.BaseActivity
+import dalian.razvan.cucer.workouts.core.baseClasses.BaseActivity
 
 class WorkoutsActivity: BaseActivity() {
 

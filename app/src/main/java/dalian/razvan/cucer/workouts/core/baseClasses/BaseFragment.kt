@@ -1,4 +1,4 @@
-package dalian.razvan.cucer.workouts.core
+package dalian.razvan.cucer.workouts.core.baseClasses
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -19,8 +19,6 @@ abstract class BaseFragment: Fragment(), BaseFragmentView {
     abstract fun showHomeAsUp(): Boolean
     abstract fun homeAsUpEnabled(): Boolean
     abstract fun showToolbar(): Boolean
-    abstract fun getViewModelClass(): Class<out BaseViewModel>
-    abstract fun getViewModelInstance(): BaseViewModel
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View?
                 = inflater.inflate(R.layout.fragment_base, container, false)
@@ -33,7 +31,6 @@ abstract class BaseFragment: Fragment(), BaseFragmentView {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(getViewModelClass())
     }
 
     override fun showProgressBar(show: Boolean) {
