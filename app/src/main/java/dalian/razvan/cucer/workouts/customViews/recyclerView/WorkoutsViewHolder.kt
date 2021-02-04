@@ -1,4 +1,4 @@
-package dalian.razvan.cucer.workouts.customViews
+package dalian.razvan.cucer.workouts.customViews.recyclerView
 
 import android.view.View
 import android.widget.ImageView

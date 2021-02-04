@@ -1,12 +1,10 @@
-package dalian.razvan.cucer.workouts.customViews
+package dalian.razvan.cucer.workouts.customViews.recyclerView
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import dalian.razvan.cucer.workouts.R
-import dalian.razvan.cucer.workouts.core.baseClasses.BaseModelView
 import dalian.razvan.cucer.workouts.core.baseClasses.BaseRecyclerViewAdapter
-import dalian.razvan.cucer.workouts.models.workout.Workout
 import dalian.razvan.cucer.workouts.models.workout.WorkoutModelViewImpl
 
 class WorkoutsAdapter: BaseRecyclerViewAdapter<WorkoutModelViewImpl, WorkoutsViewHolder>() {
