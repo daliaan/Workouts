@@ -14,12 +14,4 @@ class WorkoutDetailFragment: BaseFragment() {
     override fun getTitle(): Int = 0
 
     override fun showToolbar(): Boolean = true
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-        add_new_workout.setOnClickListener {
-            Navigation.findNavController(it).navigate(R.id.goToAddNewWorkout)
-        }
-    }
 }
