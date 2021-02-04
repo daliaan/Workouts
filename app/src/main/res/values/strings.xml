@@ -4,4 +4,14 @@
     <string name="login">Login</string>
     <string name="register">Register</string>
     <string name="workout_history">Workout History</string>
+    <string name="username_hint">Username</string>
+    <string name="email_hint">Email</string>
+    <string name="password_hint">Password</string>
+    <string name="confirm_password_hint">Confirm Password</string>
+    <string name="workout_name_hint">Workout Name</string>
+    <string name="burned_calories_hint">Burned Calories</string>
+    <string name="workout_duration_hint">Workout Duration</string>
+    <string name="workout_date_hint">Date of Workout</string>
+    <string name="splash">Splash</string>
+    <string name="agree_to_terms">Agree to terms and conditions</string>
 </resources>

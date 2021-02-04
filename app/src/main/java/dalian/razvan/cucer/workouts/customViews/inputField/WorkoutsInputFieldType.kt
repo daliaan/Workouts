@@ -5,6 +5,7 @@ enum class WorkoutsInputFieldType {
     USERNAME,
     EMAIL,
     PASSWORD,
+    CONFIRM_PASSWORD,
     WORKOUT_NAME,
     BURNED_CALORIES,
     WORKOUT_DURATION,

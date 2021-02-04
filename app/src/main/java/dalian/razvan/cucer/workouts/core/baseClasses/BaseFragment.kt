@@ -2,21 +2,31 @@ package dalian.razvan.cucer.workouts.core.baseClasses
 
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.res.ResourcesCompat
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
 import dalian.razvan.cucer.workouts.R
+import dalian.razvan.cucer.workouts.screens.WorkoutsActivity
 import kotlinx.android.synthetic.main.fragment_base.*
 
 abstract class BaseFragment: Fragment(), BaseFragmentView {
 
+    protected lateinit var appActivity: WorkoutsActivity
+
     abstract fun whichLayout(): Int
     abstract fun getTitle(): Int
-    abstract fun showHomeAsUp(): Boolean
-    abstract fun homeAsUpEnabled(): Boolean
     abstract fun showToolbar(): Boolean
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        activity?.let {
+            appActivity = it as WorkoutsActivity
+        }
+    }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View?
                 = inflater.inflate(R.layout.fragment_base, container, false)
@@ -24,11 +34,8 @@ abstract class BaseFragment: Fragment(), BaseFragmentView {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         fragment_content.addView(LayoutInflater.from(view.context).inflate(whichLayout(), null))
         super.onViewCreated(view, savedInstanceState)
+        appActivity.setSupportActionBar(toolbar)
         setupToolbar()
-    }
-
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
     }
 
     override fun showProgressBar(show: Boolean) {
@@ -59,6 +66,8 @@ abstract class BaseFragment: Fragment(), BaseFragmentView {
     }
 
     private fun setupToolbar() {
-
+        if (getTitle() != 0)
+            appActivity.supportActionBar?.title = resources.getString(getTitle())
+        toolbar.visibility = if (showToolbar()) View.VISIBLE else View.GONE
     }
 }

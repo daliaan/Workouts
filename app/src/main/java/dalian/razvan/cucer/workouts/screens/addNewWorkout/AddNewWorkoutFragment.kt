@@ -9,7 +9,5 @@ class AddNewWorkoutFragment: BaseFragment() {
     override fun whichLayout(): Int = R.layout.fragment_add_new_workout
     override fun getTitle(): Int = R.string.add_new_workout
 
-    override fun showHomeAsUp(): Boolean = false
-    override fun homeAsUpEnabled(): Boolean = false
     override fun showToolbar(): Boolean = true
 }

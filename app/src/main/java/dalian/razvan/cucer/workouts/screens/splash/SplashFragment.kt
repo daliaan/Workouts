@@ -12,10 +12,8 @@ class SplashFragment: BaseFragment() {
     private val splashViewModel by viewModel<SplashViewModel>()
 
     override fun whichLayout(): Int = R.layout.fragment_splash
-    override fun getTitle(): Int = 0
+    override fun getTitle(): Int = R.string.splash
 
-    override fun showHomeAsUp(): Boolean = false
-    override fun homeAsUpEnabled(): Boolean = false
     override fun showToolbar(): Boolean = false
 
     override fun onResume() {

@@ -9,7 +9,5 @@ class WorkoutHistoryFragment: BaseFragment() {
     override fun whichLayout(): Int = R.layout.fragment_workout_history
     override fun getTitle(): Int = R.string.workout_history
 
-    override fun showHomeAsUp(): Boolean = false
-    override fun homeAsUpEnabled(): Boolean = false
     override fun showToolbar(): Boolean = true
 }
