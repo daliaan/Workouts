@@ -16,4 +16,7 @@
     <string name="agree_to_terms">Agree to terms and conditions</string>
     <string name="add_photo">Add Photo</string>
     <string name="save_workout">Save Workout</string>
+    <string name="authentication_failed">Authentication failed.</string>
+    <string name="email_not_valid">Please enter email address.</string>
+    <string name="password_not_valid">Please enter password.</string>
 </resources>

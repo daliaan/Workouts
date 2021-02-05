@@ -1,10 +1,12 @@
 package dalian.razvan.cucer.workouts.core.baseClasses
 
+import android.content.DialogInterface
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.res.ResourcesCompat
 import androidx.fragment.app.Fragment
@@ -43,7 +45,24 @@ abstract class BaseFragment: Fragment(), BaseFragmentView {
     }
 
     override fun showPopup(text: String) {
-        TODO("Not yet implemented")
+        val alertDialogBuilder = AlertDialog.Builder(appActivity)
+        alertDialogBuilder.setTitle("")
+        alertDialogBuilder.setMessage(text)
+        alertDialogBuilder.setPositiveButton(resources.getString(android.R.string.ok)) { dialog: DialogInterface?, which: Int ->
+            dialog?.dismiss()
+        }
+        alertDialogBuilder.setOnDismissListener { dialog: DialogInterface? ->
+            dialog?.dismiss()
+        }
+        val alertDialog = alertDialogBuilder.create()
+        alertDialog.setOnShowListener { dialog: DialogInterface? ->
+
+        }
+        alertDialog.show()
+    }
+
+    override fun showPopup(resId: Int) {
+        showPopup(resources.getString(resId))
     }
 
     override fun goBack() {

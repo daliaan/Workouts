@@ -12,14 +12,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.inputmethod.EditorInfo
 import android.view.inputmethod.InputMethodManager
-import android.widget.EditText
 import android.widget.TextView
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
 import dalian.razvan.cucer.workouts.R
 
-class WorkoutsInputField: TextInputLayout, TextView.OnEditorActionListener, View.OnFocusChangeListener {
+class WorkoutsInputField: TextInputLayout, TextView.OnEditorActionListener, View.OnFocusChangeListener, TextWatcher {
 
+    private var isValid: Boolean = true
     private lateinit var fieldType: WorkoutsInputFieldType
     private val textInputLayout: TextInputLayout
     private val textInputEditText: TextInputEditText
@@ -52,6 +52,18 @@ class WorkoutsInputField: TextInputLayout, TextView.OnEditorActionListener, View
         dispatchKeyEvent(KeyEvent(KeyEvent.ACTION_DOWN, EditorInfo.IME_ACTION_NEXT))
     }
 
+    override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+
+    }
+
+    override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+
+    }
+
+    override fun afterTextChanged(p0: Editable?) {
+        validate()
+    }
+
     fun set(fieldType: WorkoutsInputFieldType, value: String = "", isLast: Boolean = false) {
 
         this.fieldType = fieldType
@@ -62,6 +74,7 @@ class WorkoutsInputField: TextInputLayout, TextView.OnEditorActionListener, View
         textInputEditText.inputType = getInputType(fieldType)
         textInputEditText.onFocusChangeListener = this
         textInputEditText.setOnEditorActionListener(this)
+        textInputEditText.addTextChangedListener(this)
         textInputEditText.imeOptions = if (isLast) EditorInfo.IME_ACTION_DONE else EditorInfo.IME_ACTION_NEXT
 
         error = ""
@@ -91,6 +104,30 @@ class WorkoutsInputField: TextInputLayout, TextView.OnEditorActionListener, View
             WorkoutsInputFieldType.BURNED_CALORIES -> InputType.TYPE_CLASS_NUMBER
             WorkoutsInputFieldType.PASSWORD, WorkoutsInputFieldType.CONFIRM_PASSWORD -> InputType.TYPE_TEXT_VARIATION_PASSWORD
             else -> InputType.TYPE_CLASS_TEXT
+        }
+    }
+
+    fun value(): String {
+        return textInputEditText.text.toString()
+    }
+
+    fun validate(): Boolean {
+        isValid = value().isNotEmpty() && value().isNotBlank()
+
+        if (isValid) {
+            error = ""
+        } else {
+            showCorrectError()
+        }
+
+        return isValid
+    }
+
+    private fun showCorrectError() {
+        when(fieldType) {
+            WorkoutsInputFieldType.EMAIL -> error = resources.getString(R.string.email_not_valid)
+            WorkoutsInputFieldType.PASSWORD -> error = resources.getString(R.string.password_not_valid)
+            else -> {}
         }
     }
 }

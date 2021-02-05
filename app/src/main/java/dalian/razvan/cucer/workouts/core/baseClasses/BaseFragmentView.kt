@@ -5,6 +5,7 @@ interface BaseFragmentView {
     fun showProgressBar(show : Boolean)
 
     fun showPopup(text : String)
+    fun showPopup(resId : Int)
 
     fun goBack()
 
