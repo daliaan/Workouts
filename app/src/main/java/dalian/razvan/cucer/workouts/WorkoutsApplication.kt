@@ -1,6 +1,7 @@
-package dalian.razvan.cucer.workouts.core
+package dalian.razvan.cucer.workouts
 
 import android.app.Application
+import com.google.firebase.FirebaseApp
 import dalian.razvan.cucer.workouts.dependencyInjection.*
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
@@ -17,5 +18,6 @@ class WorkoutsApplication: Application() {
                             networkModule,
                             serviceModule))
         }
+        FirebaseApp.initializeApp(this)
     }
 }

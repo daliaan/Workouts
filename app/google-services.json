@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "200503798064",
+    "project_id": "workouts-2d644",
+    "storage_bucket": "workouts-2d644.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:200503798064:android:5d4e5e5974650ef41d00f5",
+        "android_client_info": {
+          "package_name": "dalian.razvan.cucer.workouts"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "200503798064-mql9bgrvccan57cfjta1fodufl5h3354.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "dalian.razvan.cucer.workouts",
+            "certificate_hash": "d5207224bec16dd6ff6f358b76b5f5064475c31f"
+          }
+        },
+        {
+          "client_id": "200503798064-hfkurihejaiq5bs1c28mplc2dd4omnpe.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAUKzxUbdQtMOLmauATppgnmam_lHqbscs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "200503798064-hfkurihejaiq5bs1c28mplc2dd4omnpe.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -2,13 +2,22 @@ package dalian.razvan.cucer.workouts.core.baseClasses
 
 import android.content.Context
 import android.graphics.Rect
+import android.os.Bundle
 import android.view.MotionEvent
 import android.view.View
 import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
+import com.google.firebase.auth.FirebaseAuth
 
 abstract class BaseActivity: AppCompatActivity() {
+
+    protected lateinit var auth: FirebaseAuth
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        auth = FirebaseAuth.getInstance()
+    }
 
     override fun dispatchTouchEvent(event: MotionEvent): Boolean {
 

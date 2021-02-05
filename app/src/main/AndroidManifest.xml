@@ -14,7 +14,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Workouts"
-        android:name=".core.WorkoutsApplication">
+        android:name=".WorkoutsApplication">
 
         <activity
             android:name=".screens.WorkoutsActivity"
