@@ -7,6 +7,10 @@ import dalian.razvan.cucer.workouts.R
 import dalian.razvan.cucer.workouts.core.baseClasses.BaseFragment
 import dalian.razvan.cucer.workouts.customViews.inputField.WorkoutsInputFieldType
 import kotlinx.android.synthetic.main.fragment_login.*
+import kotlinx.android.synthetic.main.fragment_login.email_input_field
+import kotlinx.android.synthetic.main.fragment_login.password_input_field
+import kotlinx.android.synthetic.main.fragment_login.register
+import kotlinx.android.synthetic.main.fragment_register.*
 import org.koin.android.viewmodel.ext.android.viewModel
 
 class LoginFragment: BaseFragment(), View.OnClickListener, LoginFragmentView {
@@ -37,20 +41,7 @@ class LoginFragment: BaseFragment(), View.OnClickListener, LoginFragmentView {
     override fun onClick(view: View?) {
         when(view?.id) {
             R.id.login -> {
-                if (email_input_field.validate() && password_input_field.validate())
-                    viewModel.login(this)
-                else {
-                    var error = ""
-                    if (!email_input_field.validate()) {
-                        error += resources.getString(R.string.email_not_valid)
-                        error += "\n"
-                    }
-                    if (!password_input_field.validate()) {
-                        error += resources.getString(R.string.password_not_valid)
-                    }
-                    showPopup(error)
-                }
-
+                viewModel.login(this)
             }
             R.id.register -> {
                 goToRegister(view)
@@ -59,13 +50,10 @@ class LoginFragment: BaseFragment(), View.OnClickListener, LoginFragmentView {
         }
     }
 
-    override fun getEmail(): String {
-        return email_input_field.value()
-    }
-
-    override fun getPassword(): String {
-        return password_input_field.value()
-    }
+    override fun getEmail(): String = email_input_field.value()
+    override fun getPassword(): String = password_input_field.value()
+    override fun validateEmail(): Boolean = email_input_field.validate()
+    override fun validatePassword(): Boolean = password_input_field.validate()
 
     override fun goToRegister(v: View) {
         Navigation.findNavController(v).popBackStack()
@@ -75,7 +63,7 @@ class LoginFragment: BaseFragment(), View.OnClickListener, LoginFragmentView {
     override fun goToHomepage() {
         view?.let {
             Navigation.findNavController(it).popBackStack()
-            Navigation.findNavController(it).navigate(R.id.goToRegister)
+            Navigation.findNavController(it).navigate(R.id.goToHome)
         }
     }
 }

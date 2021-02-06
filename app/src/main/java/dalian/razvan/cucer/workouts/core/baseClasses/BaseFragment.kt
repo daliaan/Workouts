@@ -44,14 +44,16 @@ abstract class BaseFragment: Fragment(), BaseFragmentView {
         TODO("Not yet implemented")
     }
 
-    override fun showPopup(text: String) {
+    override fun showPopup(text: String, onClickListener: DialogInterface.OnClickListener?, onDismissClickListener: DialogInterface.OnDismissListener?) {
         val alertDialogBuilder = AlertDialog.Builder(appActivity)
         alertDialogBuilder.setTitle("")
         alertDialogBuilder.setMessage(text)
         alertDialogBuilder.setPositiveButton(resources.getString(android.R.string.ok)) { dialog: DialogInterface?, which: Int ->
+            onClickListener?.onClick(dialog, which)
             dialog?.dismiss()
         }
         alertDialogBuilder.setOnDismissListener { dialog: DialogInterface? ->
+            onDismissClickListener?.onDismiss(dialog)
             dialog?.dismiss()
         }
         val alertDialog = alertDialogBuilder.create()
@@ -59,6 +61,10 @@ abstract class BaseFragment: Fragment(), BaseFragmentView {
 
         }
         alertDialog.show()
+    }
+
+    override fun showPopup(text: String) {
+        showPopup(text, null, null)
     }
 
     override fun showPopup(resId: Int) {

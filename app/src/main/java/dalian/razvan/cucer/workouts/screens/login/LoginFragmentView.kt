@@ -8,6 +8,9 @@ interface LoginFragmentView: BaseFragmentView {
     fun getEmail(): String
     fun getPassword(): String
 
+    fun validateEmail(): Boolean
+    fun validatePassword(): Boolean
+
     fun goToRegister(v: View)
     fun goToHomepage()
 

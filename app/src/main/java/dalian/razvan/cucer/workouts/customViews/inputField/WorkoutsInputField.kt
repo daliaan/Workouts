@@ -125,9 +125,11 @@ class WorkoutsInputField: TextInputLayout, TextView.OnEditorActionListener, View
 
     private fun showCorrectError() {
         when(fieldType) {
+            WorkoutsInputFieldType.USERNAME -> resources.getString(R.string.username_not_valid)
             WorkoutsInputFieldType.EMAIL -> error = resources.getString(R.string.email_not_valid)
             WorkoutsInputFieldType.PASSWORD -> error = resources.getString(R.string.password_not_valid)
-            else -> {}
+            WorkoutsInputFieldType.CONFIRM_PASSWORD -> error = resources.getString(R.string.confirm_password_not_valid)
+            else -> error = ""
         }
     }
 }

@@ -19,4 +19,9 @@
     <string name="authentication_failed">Authentication failed.</string>
     <string name="email_not_valid">Please enter email address.</string>
     <string name="password_not_valid">Please enter password.</string>
+    <string name="username_not_valid">Please enter valid username.</string>
+    <string name="successful_register">Register successful.</string>
+    <string name="registration_failed">Registration failed. Please try again.</string>
+    <string name="agree_to_terms_first">Please agree to terms and conditions first.</string>
+    <string name="confirm_password_not_valid">Confirm password is not correct!</string>
 </resources>
