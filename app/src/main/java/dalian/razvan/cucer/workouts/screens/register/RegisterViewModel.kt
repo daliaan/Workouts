@@ -21,7 +21,7 @@ class RegisterViewModel(var useCase: RegisterUseCase, var repository: UserReposi
                         .addOnCompleteListener {
                             if (it.isSuccessful) {
                                 repository.setUser(Firebase.auth.currentUser)
-                                //TODO check userProfileChangeRequest issue
+                                repository.setUsername(registerScreen.getUsername())
                                 registerScreen.goToHomepage()
                             }
                         }.addOnFailureListener {

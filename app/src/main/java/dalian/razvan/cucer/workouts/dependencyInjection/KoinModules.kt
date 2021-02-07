@@ -29,8 +29,8 @@ val useCaseModule = module {
 }
 
 val repositoryModule = module {
-    single { UserRepositoryImpl() as UserRepository }
     single { WorkoutRepositoryImpl() as WorkoutRepository }
+    single { UserRepositoryImpl(get()) as UserRepository }
 }
 
 val viewModelsModule = module {
