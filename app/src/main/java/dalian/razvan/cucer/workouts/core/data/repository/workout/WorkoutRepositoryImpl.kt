@@ -23,6 +23,9 @@ class WorkoutRepositoryImpl: BaseRepositoryImpl(), WorkoutRepository {
     }
 
     override fun getUserWorkouts(): ArrayList<Workout> = workouts
+    override fun addNewWorkout(generateWorkout: Workout) {
+        getUserWorkoutsPath()
+    }
 
     override fun refreshForUser(workoutsUser: User?, onCompleteListener: OnCompleteListener<DataSnapshot>, onFailureListener: OnFailureListener) {
         workoutsUser?.let {

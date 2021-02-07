@@ -5,6 +5,6 @@ import com.google.gson.annotations.SerializedName
 
 data class Workout(@SerializedName("workout_name") var workoutName: String = "",
                    @SerializedName("workout_date") var workoutDate: String = "",
-                   @SerializedName("burned_calories") var burnedCalories: Int = 0,
-                   @SerializedName("workout_duration") var workoutDuration: Int = 0,
-                   @SerializedName("photo") var photo: Bitmap?)
+                   @SerializedName("burned_calories") var burnedCalories: String = "",
+                   @SerializedName("workout_duration") var workoutDuration: String = "",
+                   @SerializedName("photo") var photo: Bitmap? = null)

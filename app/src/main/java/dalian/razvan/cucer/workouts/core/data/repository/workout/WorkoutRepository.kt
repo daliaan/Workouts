@@ -11,4 +11,5 @@ interface WorkoutRepository: BaseRepository {
     fun enrollUser(workoutsUser: User?)
     fun refreshForUser(workoutsUser: User?, onCompleteListener: OnCompleteListener<DataSnapshot>, onFailureListener: OnFailureListener)
     fun getUserWorkouts(): ArrayList<Workout>
+    fun addNewWorkout(generateWorkout: Workout)
 }
